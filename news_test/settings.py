@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "frontpage"
+LOGOUT_REDIRECT_URL = "frontpage"
+
 
 # Application definition
 
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "crispy_forms",
     "main",
     "post",
     "user_profile",
@@ -58,7 +63,7 @@ ROOT_URLCONF = "news_test.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
