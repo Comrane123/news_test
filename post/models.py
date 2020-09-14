@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Story(models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=255)
     url = models.URLField()
 
@@ -23,19 +23,19 @@ class Story(models.Model):
 
 
 class Vote(models.Model):
-    story = models.ForeignKey(Story, related_name="votes", on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name="votes", on_delete=models.CASCADE)
 
     created_by = models.ForeignKey(User, related_name="votes", on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
-        self.story.number_of_votes = self.story.number_of_votes + 1
-        self.story.save()
+        self.post.number_of_votes = self.post.number_of_votes + 1
+        self.post.save()
 
         super(Vote, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):
-    story = models.ForeignKey(Story, related_name="comments", on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
 
     body = models.TextField()
 

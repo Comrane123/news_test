@@ -15,15 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
 from django.contrib.auth import views
 
-from post.views import frontpage, search, submit, newest, vote, story
+from post.views import frontpage, search, submit, newest, vote, post
 from main.views import signup
+
 
 urlpatterns = [
     path("", frontpage, name="frontpage"),
-    path("s/<int:story_id>/vote/", vote, name="vote"),
-    path("s/<int:story_id>/", story, name="story"),
+    path("s/<int:post_id>/vote/", vote, name="vote"),
+    path("s/<int:post_id>/", post, name="post"),
     path("u/", include("user_profile.urls")),
     path("newest/", newest, name="newest"),
     path("search/", search, name="search"),
@@ -34,4 +36,5 @@ urlpatterns = [
     ),
     path("logout/", views.LogoutView.as_view(), name="logout"),
     path("admin/", admin.site.urls),
+    path("api/", include("post.api.urls")),
 ]

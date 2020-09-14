@@ -1,11 +1,11 @@
 from django import forms
 
-from .models import Story, Comment
+from .models import Post, Comment
 
 
-class StoryForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
-        model = Story
+        model = Post
         fields = ("title", "url")
 
 
