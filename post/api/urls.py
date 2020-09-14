@@ -1,16 +1,13 @@
-from django.urls import include, path
-from rest_framework import routers
+from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
 
-from .views import PostViewSet, CommentViewSet
+from .views import PostList, PostDetail, CommentList, CommentDetail
 
-
-router = routers.DefaultRouter()
-router.register(r"posts", PostViewSet)
-router.register(r"comments", CommentViewSet)
-
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path("", include(router.urls)),
-    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path('posts/', PostList.as_view()),
+    path('posts/<int:pk>/', PostDetail.as_view()),
+    path('comments/', CommentList.as_view()),
+    path('comments/<int:pk>/', CommentDetail.as_view()),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
