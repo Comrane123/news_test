@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "alquta=a=&&b2dd34t+s2j-x6musnk7+&i9mu6-zsjei02jr8e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "frontpage"
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "crispy_forms",
+    "bulma",
     "main",
     "post",
     "user_profile",
@@ -94,9 +95,7 @@ WSGI_APPLICATION = "news_test.wsgi.application"
 #     }
 # }
 
-DATABASES = {
-    "default": dj_database_url.config()
-}
+DATABASES = {"default": dj_database_url.config()}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -139,5 +138,5 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 django_heroku.settings(locals())
