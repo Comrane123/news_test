@@ -12,6 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
             "url",
             "created_by",
             "created_at",
+            "number_of_votes",
         ]
 
 
