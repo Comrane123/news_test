@@ -6,7 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     url = models.URLField()
 
-    number_of_votes = models.IntegerField(default=1)
+    number_of_votes = models.IntegerField(default=0)
 
     created_by = models.ForeignKey(
         User, related_name="stories", on_delete=models.CASCADE
