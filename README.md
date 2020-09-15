@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Create a virtualenv for the project
 * Install the requirements.txt file with pip
+* Create Postgresql db with corresponding to settings.py
 
 ```
 pip install -r requirements.txt
@@ -27,4 +28,10 @@ python ./manage.py runserver
 ### Postman collection
 ```
 https://www.getpostman.com/collections/baf5467cce196e1d6c07
+```
+
+### Heroku deployment
+```
+https://boiling-sea-64057.herokuapp.com/api/posts/
+https://boiling-sea-64057.herokuapp.com/api/comments/
 ```
