@@ -138,5 +138,5 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 django_heroku.settings(locals())
