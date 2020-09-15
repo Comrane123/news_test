@@ -24,3 +24,7 @@ python ./manage.py runserver
 
 * Enjoy the site at 127.0.0.1:8000 or your corresponding localhost
 
+### Postman collection
+```
+https://www.getpostman.com/collections/baf5467cce196e1d6c07
+```
