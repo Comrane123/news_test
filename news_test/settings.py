@@ -83,18 +83,18 @@ WSGI_APPLICATION = "news_test.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "news_test",
-        "USER": "postgres",
-        "PASSWORD": "123456",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "news_test",
+#         "USER": "postgres",
+#         "PASSWORD": "123456",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
 
-# DATABASES = {"default": dj_database_url.config()}
+DATABASES = {"default": dj_database_url.config()}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

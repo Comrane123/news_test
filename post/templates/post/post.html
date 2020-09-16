@@ -1,0 +1,22 @@
+<div class="columns">
+    <div class="column is-12">
+        <table class="table is-striped is-fullwidth">
+            <tbody>
+                {% for post in posts %}
+                    <tr>
+                        <td>{{ forloop.counter }}.</td>
+                        <td>
+                            <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+                            <p>
+                                {{ post.number_of_votes }} votes by {{ post.created_by.username }} {{ post.created_at|timesince }} ago |
+                                
+                                {% if not post.created_by == request.user %}<a href="{% url 'vote' post.id %}">Vote</a>{% endif %}
+                                <a href="{% url 'post' post.id %}">Discuss</a>
+                            </p>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
