@@ -26,7 +26,7 @@ python ./manage.py runserver
 
 * Enjoy the site at 127.0.0.1:8000 or your corresponding localhost
 
-###Docker
+### Docker
 * Change parameter in settings.py
 ```
 DATABASES = {
@@ -51,7 +51,7 @@ https://boiling-sea-64057.herokuapp.com/
 ```
 
 
-####Api endpoints
+#### Api endpoints
 ```
 https://boiling-sea-64057.herokuapp.com/api/posts/
 https://boiling-sea-64057.herokuapp.com/api/comments/
