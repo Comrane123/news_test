@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "crispy_forms",
     "django_simple_bulma",
+    "django_celery_beat",
     "main",
     "post",
     "user_profile",
